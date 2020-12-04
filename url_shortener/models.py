@@ -29,4 +29,4 @@ class Link(db.Model):
         if link:
             return self.generate_short_url()
 
-        return link
+        return short_url
