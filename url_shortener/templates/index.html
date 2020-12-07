@@ -1,5 +1,52 @@
-<form method="POST" action="{{url_for('short.new_link')}}" >
-    <label for="urlText">URL: </label>
-    <input id="urlText" name="original_url" type="text" placeholder="Enter URL Here"></input>
-    <button type="submit">Submit</button>
-</form> 
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>URL Shortener</title>
+        <meta name="description" content="A URL Shortener built using flask">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="../static/style/index.css">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="heading">
+            <h1 class="main-heading"><a href="/">URL Shortener</a></h1>
+            <h2 class="main-sub">Shorten any long URL in seconds.</h2>
+        </div>
+        
+        <form class="main-form" method="POST" action="{{url_for('short.new_link')}}" >
+            <input autocomplete="off" name="original_url" type="text" placeholder="https://www.google.com" />
+            <button class="submit" type="submit">Shorten Link</button>
+        </form>
+            
+        <div class="links-display">
+        {% if short_link and original_link %}
+            <p>Original Link: <a href={{ original_link }}> {{ original_link }} </a></p>
+            <p>
+                Short Link:
+                <a
+                    href={{ url_for('short.redirect_to_url', short_url = short_link, _external = True) }} target="_blank">
+                    {{url_for('short.redirect_to_url', short_url = short_link, _external = True)}}
+                    
+                </a>
+            </p>
+
+
+            {% if visits == 1 %}
+                <p>This short URL has been visited {{ visits }} time</p>
+            {% else %}
+                <p>This short URL has been visited {{ visits }} times</p>
+            {% endif %}
+        {% endif %}
+        </div>
+
+    </body>
+</html>
+
+
+
+
+
+
