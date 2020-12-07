@@ -1,0 +1,105 @@
+*:focus {
+    outline: none;
+}
+
+html, body {
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+h1.main-heading {
+    text-align: center;
+    font-size: 2.4em;
+    line-height: 0.9em;
+    margin: -1.5em 0 0.5em 0;
+    padding: 0;
+    font-weight: 500;
+}
+
+h1 > a{
+    text-decoration: none;
+    color: black;
+    transition: color .3s ease-in-out;
+}
+
+h1.main-heading a:hover {
+    color: rgb(48, 81, 180);
+    cursor: pointer;
+}
+
+h2.main-sub {
+    text-align: center;
+    font-size: 1.5em;
+    line-height: 1.2em;
+    margin: 0.5em 0 1em 0;
+}
+
+form.main-form {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 500;
+    width: 75%;
+    min-height: 15vh;
+    margin-top: -4em;
+}
+
+form.main-form input[type="text"] {
+    border-radius: 2em;
+    height: 2.4em;
+    width: 60vw;
+    border: 1px solid royalblue;
+    font-size: 1em;
+    line-height: 1.2em;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+}
+
+form.main-form button.submit {
+    background: transparent;
+    height: 2.5em;
+    width: 10em;
+    padding: 0;
+    font-weight: 700;
+    font-size: 0.9em;
+    border-color: rgb(79, 135, 255);
+    justify-self: center;
+    border-radius: 1em;
+    transition: all 0.3s;
+}
+
+form.main-form button.submit:hover{
+    background: rgb(79, 135, 255);
+    color: white;
+    cursor: pointer;
+}
+
+div.links-display {
+    margin-top: -1em;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 1.2em;
+    font-weight: 500;
+}
+
+.links-display a {
+    text-decoration: none;
+    font-weight: 700;
+    color: royalblue;
+    transition: all .2s ease-in-out;
+}
+
+.links-display a:hover {
+    text-decoration: underline;
+    color: rgb(25, 40, 85);
+}
