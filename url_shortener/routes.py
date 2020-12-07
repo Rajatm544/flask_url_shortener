@@ -14,7 +14,7 @@ def redirect_to_url(short_url):
     return redirect(link.original_url)
 
 
-@short.route("/")
+@short.route("/", methods=["GET"])
 def index():
     return render_template("index.html")
 
@@ -25,13 +25,15 @@ def visits():
     return render_template("visits.html", links=links)
 
 
-@short.route("/new", methods=["POST"])
+@short.route("/", methods=["POST"])
 def new_link():
     original_url = request.form['original_url']
-    link = Link(original_url=original_url)
-    db.session.add(link)
-    db.session.commit()
-    return render_template("link_added.html", short_link=link.short_url, original_link=link.original_url)
+    link = Link.query.filter_by(original_url=original_url).first()
+    if not link:
+        link = Link(original_url=original_url)
+        db.session.add(link)
+        db.session.commit()
+    return render_template("index.html", short_link=link.short_url, original_link=link.original_url, visits=link.visits)
 
 
 @short.errorhandler(404)
