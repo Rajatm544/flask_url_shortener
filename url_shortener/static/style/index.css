@@ -87,12 +87,16 @@ div.links-display {
     display: flex;
     flex-flow: column wrap;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     font-size: 1.2em;
     font-weight: 500;
 }
 
 .links-display a {
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
     text-decoration: none;
     font-weight: 700;
     color: royalblue;
@@ -101,5 +105,55 @@ div.links-display {
 
 .links-display a:hover {
     text-decoration: underline;
-    color: rgb(25, 40, 85);
+    color: #192855;
+}
+
+@media only screen and (max-width: 768px) {
+    html,
+    body {
+        flex-flow: column nowrap;
+        justify-content: space-around;
+    }
+
+    h1.main-heading {
+        font-size: 2em;
+        margin: 0;
+    }
+
+    h2.main-sub {
+        font-size: 1.2em;
+        line-height: 1.5em;
+    }
+
+    form.main-form {
+        flex-flow: column wrap;
+        font-size: 1.2em;
+        width: 100%;
+    }
+
+    form.main-form input[type="text"] {
+        height: 2em;
+        width: 80vw;
+        font-size: 0.9em;
+        line-height: 1.2em;
+        margin: 0.5em 0;
+    }
+
+    form.main-form button.submit {
+        height: 2em;
+        width: 7em;
+        font-size: 0.8em;
+        margin-top: 0;
+    }
+
+    div.links-display {
+        flex-flow: column nowrap;
+        font-size: 1.1em;
+        font-weight: 500;
+        word-break: break-all
+    }
+
+    .links-display a {
+        max-width: 95vw;
+    }
 }
