@@ -36,7 +36,7 @@ h1.main-heading a:hover {
 
 h2.main-sub {
     text-align: center;
-    font-size: 1.5em;
+    font-size: 1.2em;
     line-height: 1.2em;
     margin: 0.5em 0 1em 0;
 }
@@ -90,6 +90,8 @@ div.links-display {
     justify-content: space-around;
     align-items: flex-start;
     font-size: 1.2em;
+    word-break: break-all;
+    max-width:95vw;
     font-weight: 500;
 }
 
@@ -137,8 +139,6 @@ div.links-display {
         height: 2em;
         width: 80vw;
         font-size: 0.9em;
-        line-height: 1.2em;
-        margin: 0.5em 0;
     }
 
     form.main-form button.submit {
@@ -152,7 +152,6 @@ div.links-display {
         flex-flow: column nowrap;
         font-size: 1em;
         font-weight: 500;
-        word-break: break-all
     }
 
     .links-display a {
